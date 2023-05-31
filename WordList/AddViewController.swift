@@ -31,20 +31,27 @@ class AddViewController: UIViewController {
             englishTextField.text = ""
             japaneseTextField.text = ""
         }else{
-            //wordDictionaryに値を追加
+            
             let wordDictionary = ["english": englishTextField.text!, "japanese": japaneseTextField.text!]
             
-            //wordArrayに追加
             wordArray.append(wordDictionary)
             
             //UserDefaultsに保存
             saveData.set(wordArray, forKey: "WORD")
             
             //alertを作成
-            let alert = UIAlertController(title: "保存完了", message: "単語の登録が完了しました", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
+            let alert = UIAlertController(
+                title: "保存完了",
+                message: "単語の登録が完了しました",
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(
+                title: "OK",
+                style: .default,
+                handler: nil
+            ))
             
+            present(alert, animated: true, completion: nil)
             englishTextField.text = ""
             japaneseTextField.text = ""
             // Do any additional setup after loading the view.
